@@ -26,6 +26,5 @@ public class EventService
     public static void publishEventAsynchronously(AbstractEvent event)
     {
         OrionJobService.runJobWithCurrentThreadName(new PublishEventTask(event));
-        return;
     }
 }

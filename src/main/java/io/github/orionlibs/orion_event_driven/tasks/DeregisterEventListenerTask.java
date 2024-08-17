@@ -9,11 +9,9 @@ public class DeregisterEventListenerTask
 {
     public static void run(Class<? extends AbstractEvent> eventClass, AbstractEventListener eventListener, ConcurrentMap<Class<? extends AbstractEvent>, CopyOnWriteArrayList<AbstractEventListener>> eventClassToEventListenersMapper)
     {
-
         if(eventClassToEventListenersMapper.get(eventClass) != null)
         {
             eventClassToEventListenersMapper.get(eventClass).remove(eventListener);
         }
-
     }
 }

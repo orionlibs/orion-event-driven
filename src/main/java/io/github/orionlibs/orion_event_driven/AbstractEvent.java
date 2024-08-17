@@ -5,8 +5,8 @@ import io.github.orionlibs.orion_calendar.datetime.DateTime;
 
 public abstract class AbstractEvent
 {
-    private AbstractEventContext eventContext;
-    private DateTime timestamp;
+    private final AbstractEventContext eventContext;
+    private final DateTime timestamp;
     private boolean notifySubscribersAsynchronously;
 
 

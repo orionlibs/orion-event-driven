@@ -8,12 +8,12 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class EventListenersRegistry
 {
-    private static ConcurrentMap<Class<? extends AbstractEvent>, CopyOnWriteArrayList<AbstractEventListener>> eventClassToEventListenersMapper;
+    private static final ConcurrentMap<Class<? extends AbstractEvent>, CopyOnWriteArrayList<AbstractEventListener>> eventClassToEventListenersMapper;
+
     static
     {
         eventClassToEventListenersMapper = new ConcurrentHashMap<Class<? extends AbstractEvent>, CopyOnWriteArrayList<AbstractEventListener>>();
     }
-
 
     public static void registerEventListener(Class<? extends AbstractEvent> eventClass, AbstractEventListener eventListener)
     {

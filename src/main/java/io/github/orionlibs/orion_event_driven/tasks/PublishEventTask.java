@@ -7,7 +7,7 @@ import io.github.orionlibs.orion_task_runner.OrionJob;
 
 public class PublishEventTask implements OrionJob
 {
-    private AbstractEvent event;
+    private final AbstractEvent event;
 
 
     public PublishEventTask(AbstractEvent event)
@@ -19,9 +19,9 @@ public class PublishEventTask implements OrionJob
     @Override
     public void run()
     {
-        EventListenersRegistry.getEventListenersForEvent((Class<? extends AbstractEvent>)event.getClass())
+        EventListenersRegistry.getEventListenersForEvent(event.getClass())
                         .forEach(eventListener -> ReflectionMethodAccessService.callMethod("processEvent", eventListener, new Class<?>[]
-                        {AbstractEvent.class}, new Object[]
-                        {(AbstractEvent)event}));
+                                        {AbstractEvent.class}, new Object[]
+                                        {event}));
     }
 }

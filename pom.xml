@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.orionlibs</groupId>
     <artifactId>orion-event-driven</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <name>Orion Event Driven</name>
     <description>Java library implementing a simple event-driven publish-subscribe functionality</description>
     <url>https://github.com/orionlibs/orion-event-driven</url>
@@ -243,7 +243,7 @@
         <dependency>
             <groupId>io.github.orionlibs</groupId>
             <artifactId>orion-task-runner</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </dependency>
     </dependencies>
 </project>

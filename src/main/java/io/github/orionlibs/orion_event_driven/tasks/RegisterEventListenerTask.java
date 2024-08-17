@@ -9,7 +9,6 @@ public class RegisterEventListenerTask
 {
     public static void run(Class<? extends AbstractEvent> eventClass, AbstractEventListener eventListener, ConcurrentMap<Class<? extends AbstractEvent>, CopyOnWriteArrayList<AbstractEventListener>> eventClassToEventListenersMapper)
     {
-
         if(eventClassToEventListenersMapper.get(eventClass) != null)
         {
             eventClassToEventListenersMapper.get(eventClass).add(eventListener);
@@ -20,6 +19,5 @@ public class RegisterEventListenerTask
             eventListeners.add(eventListener);
             eventClassToEventListenersMapper.put(eventClass, eventListeners);
         }
-
     }
 }

@@ -5,7 +5,7 @@ import java.util.UUID;
 
 public abstract class AbstractEventContext
 {
-    private String eventID;
+    private final String eventID;
     private String eventName;
     private AbstractEventContext parentContext;
     private Map<String, Object> parameterToObjectMapper;
